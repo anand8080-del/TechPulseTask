@@ -36,7 +36,7 @@ For example, different users can have different roles, and each role can have di
 - H2 database for storing application data
 - Actuator for application monitoring
 
-## What is RBAC?
+
 
 RBAC stands for Role Based Access Control.
 
