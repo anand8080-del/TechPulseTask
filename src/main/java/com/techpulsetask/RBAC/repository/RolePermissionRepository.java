@@ -17,12 +17,12 @@ public interface RolePermissionRepository extends JpaRepository<Rolepermisssion,
 	
 	List<Rolepermisssion> findByRole(Role role);
 	 
-    boolean existsByRoleAndPermission(Role role, Permissions permission);
+	boolean existsByRoleAndPermissions(Role role, Permissions permissions);
     
     @Query("""
             SELECT COUNT(rp) > 0
-            FROM RolePermisssion rp
-            WHERE rp.permission.name = :permissionName
+            FROM Rolepermisssion rp
+            WHERE rp.permissions.name = :permissionName
               AND rp.role.id IN (
                   SELECT ur.role.id
                   FROM Userrole ur

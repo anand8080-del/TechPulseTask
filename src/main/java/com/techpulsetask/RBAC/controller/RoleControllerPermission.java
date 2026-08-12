@@ -46,7 +46,7 @@ public class RoleControllerPermission {
         Permissions permission = permissionRepository.findById(permissionId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Permission not found: " + permissionId));
 
-        if (rolePermissionRepository.existsByRoleAndPermission(role, permission)) {
+        if (rolePermissionRepository.existsByRoleAndPermissions(role, permission)) {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Role already has this permission");
         }
 
